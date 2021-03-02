@@ -13,17 +13,13 @@ const Login = ({ authService }) => {
     });
   };
 
-  const onLogin = (event) => {
+  const onLogin = (e) => {
     authService //
-      .login(event.currentTarget.textContent)
+      .login(e.currentTarget.textContent)
       .then((data) => goToMaker(data.user.uid));
   };
 
-  useEffect(() => {
-    authService.onAuthChange((user) => {
-      user && goToMaker(user.uid);
-    });
-  });
+  useEffect(() => {});
 
   return (
     <section className={styles.login}>
